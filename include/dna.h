@@ -12,7 +12,7 @@ class dna{
 private: 
     string dna; // string contendo o texto do dna
 
-    vector<int> Strs; // vector contendo os valores dos STR
+    string Strs; // vector contendo os valores dos STR
 
 
 public:
@@ -23,11 +23,15 @@ public:
     @param arquivo recebe o nome do arquivo contendo a sequencia de dna
 */
 
-    void SetStrs();
+    void SetStrs(string sequencia);
     /*! Essa funçâo tem como objetivo encontrar os STRs da sequencia de dna
-	@param arquivo recebe o nome do arquivo contendo a sequencia de dna
+	@param sequencia recebe qual a sequencia que deve ser procurada e setará o valorda string str com base nisso
     */
 
+   string getStr();
+    /*! Essa funçâo tem como objetivo retornar o valor das 3 str
+	@return o valor em string da concatenação dos 3 valores de str
+    */
 
 };
 

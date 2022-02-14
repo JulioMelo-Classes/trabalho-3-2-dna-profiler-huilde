@@ -3,12 +3,7 @@
 #include "ui.h"
 #include "dna.h"
 #include "dataBase.h"
-
-#define ESC "\033["
-#define LIGHT_BLUE_BKG "106"
-#define PURPLE_TXT "35"
-#define RESET "\033[m"
-
+//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
 using std::cout; using std::endl;
 
 int main(int argc, char* argv[])
@@ -18,6 +13,15 @@ int main(int argc, char* argv[])
     string arquivoDna= argv[4]; //string contendo o nome do arquivo de dna
     string arquivoDados= argv[2]; //string contendo o nome da tabela de dados
     interacao.showProgram();
+    interacao.showFiles(arquivoDados,arquivoDna);
     dnaPessoal.setDna(arquivoDna);
+    dataBase dados =  dataBase(arquivoDados);
+    dnaPessoal.SetStrs("AGAT");
+    dnaPessoal.SetStrs("AATG");
+    dnaPessoal.SetStrs("TATC");
+    string Str = dnaPessoal.getStr();
+    string donoDna = dados.getIdentidade(Str);
+    interacao.showDnaProfile(donoDna);
+
 
 }
